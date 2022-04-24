@@ -1,46 +1,58 @@
 public class Person{
-    // characteristics
-    private String gender;
+
     private String name;
-    protected Integer age;
-    private int weight;
-    private static int eyeCount = 2;
+    private String contactNo;
+    private Boolean status;
+    private static Integer eyeCount = 2;
 
+    public Person(){
 
-    // method -> Return type -> void
-    int eat() {
-
-        return 1;
     }
 
-    void breath() {
-        System.out.println("Hello World");
-        if (true) {
-            return;
-        } else {
-            System.out.println("asd");
-        }
+    public Person(String name, String contactNo){
+        this.name = name;
+        this.contactNo = contactNo;
+        System.out.println("Current Instance: "+ this);
+
+    }
+    public Person(Boolean status, String contactNo){
+        this.status = status;
+        this.contactNo = contactNo;
     }
 
-    void walk() {
-        System.out.println(name+ " is Walking");
+    public Person(String contactNo, Boolean status){
+        this.status = status;
+        this.contactNo = contactNo;
     }
 
-    // Access Modifiers -> public , private , protected
-    public static void main(String[] args) {
-        Person person = new Person(); // Object creation
-        person.name = "Ashray";
-        person.age = 12;
-        person.gender = "MALE";
-        person.walk();
+    public void setName(String name){
+        this.name = name;
+    }
 
+    public void setName(String name1, String name2){
 
-        Person person1 = new Person(); // Object creation
-        person1.name = "Ashim";
-        person1.age = 21;
-        person1.gender = "MALE";
-        person1.walk();
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + this.name + '\'' +
+                ", contactNo='" + contactNo + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
 
-// JVM -> Thread (Main Thread) -> main method
+
